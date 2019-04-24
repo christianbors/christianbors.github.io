@@ -1,8 +1,7 @@
 <script>
-	window.addEventListener('onbeforeunload', () => {
-		localStorage.setItem("test", true);
-		console.log("test");
-	})
+	window.onbeforeunload = function(event) {
+		localStorage.setItem('test', 'value');
+	};
 </script>
 
 Hello World
