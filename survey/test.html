@@ -1,0 +1,23 @@
+<!-- Your platform (jquery) scripts. -->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script src="https://surveyjs.azureedge.net/1.0.82/survey.jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<div id="surveyContainer"></div>
+
+<script type="text/javascript">
+	Survey.Survey.cssType = "bootstrap";
+
+	var surveyJSON = {pages:[{name:"page1",elements:[{type:"checkbox",name:"question2",title:"Out of the highlighted (red frame) segments, which is the most certain?",correctAnswer:["item2"],choices:[{value:"item1",text:"Frame A"},{value:"item2",text:"Frame B"},{value:"item3",text:"Frame C"}]},{type:"html",name:"question1",html:"<h3>Test</h3>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"}]},{name:"page2",elements:[{type:"dropdown",name:"question3",choices:["item1","item2","item3"]}]}]}
+
+	function sendDataToServer(survey) {
+	    survey.sendResult('a7addf27-87cb-47e2-bda8-a07a37b0ca76');
+	}
+
+	var survey = new Survey.Model(surveyJSON);
+	$("#surveyContainer").Survey({
+	    model: survey,
+	    onComplete: sendDataToServer
+	});
+</script>
