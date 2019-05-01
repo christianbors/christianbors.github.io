@@ -1,0 +1,67 @@
+<!-- <link type="text/css" rel="stylesheet" href="stylesheets/main.css" /> -->
+<script>
+	window.onbeforeunload = function(event) {
+		localStorage.setItem('test', 2);
+	};
+</script>
+
+<span>Threshold: </span><span id="val">0.1</span>
+<div class="slidecontainer">
+  <input onchange="setImage(this)" type="range" min="0" max="1" value="0" step="0.05" class="slider" id="myRange">
+</div>
+<!-- <input  type="range" min="0" max="1" value="0" step="1" /> -->
+
+<img id='img' width='100%' src='images/list_slider/ul_10.png' />
+
+<script type="text/javascript">
+	var img = document.getElementById('img');
+	var val = document.getElementById('val');
+	var img_lib = {
+		'0':'images/list_slider/ul_00.png', 
+		'0.00':'images/list_slider/ul_00.png', 
+		'0.05':'images/list_slider/ul_05.png', 
+		'0.1': 'images/list_slider/ul_10.png', 
+		'0.15': 'images/list_slider/ul_15.png', 
+		'0.2': 'images/list_slider/ul_20.png', 
+		'0.25': 'images/list_slider/ul_25.png', 
+		'0.3': 'images/list_slider/ul_30.png', 
+		'0.35': 'images/list_slider/ul_35.png', 
+		'0.4': 'images/list_slider/ul_40.png', 
+		'0.45': 'images/list_slider/ul_45.png', 
+		'0.5': 'images/list_slider/ul_50.png', 
+		'0.55': 'images/list_slider/ul_55.png', 
+		'0.6': 'images/list_slider/ul_60.png', 
+		'0.65': 'images/list_slider/ul_65.png', 
+		'0.7': 'images/list_slider/ul_70.png', 
+		'0.75': 'images/list_slider/ul_75.png',
+		'0.8': 'images/list_slider/ul_80.png', 
+		'0.85': 'images/list_slider/ul_85.png',
+		'0.9': 'images/list_slider/ul_90.png',
+		'0.95': 'images/list_slider/ul_95.png',
+		'1': 'images/list_slider/ul_100.png'
+	};
+	// var img_array = ['http://www.w3schools.com/images/w3logotest2.png', 'http://www.w3schools.com/html/img_html5_html5.gif'];
+	function setImage(obj)
+	{
+		var value = obj.value;
+		img.src = img_lib[value];
+	    val.textContent = value;
+	}
+</script>
+<!-- <script type="module"> 
+
+import notebook from "https://api.observablehq.com/@christianbors/embed-vis-only.js";  //  "download code" url
+
+document.querySelector('.notebook-content').innerHTML =notebook.modules[0].variables
+.filter(d=>d)
+.map((d,i)=>` <div class=" observable-wrapper div-number-${i}"></div>`)
+.join(''); 
+
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/runtime@3/dist/runtime.js"; 
+let i=1;
+Runtime.load(notebook, (variable) => { 
+  return new Inspector(document.querySelector(`.observable-wrapper:nth-child(${i++})`));
+ }); 
+
+
+</script> -->
