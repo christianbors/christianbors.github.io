@@ -1,0 +1,14 @@
+This is due to different factors. Uncertainty can be introduced (and also measured) at different levels:
+<ul>
+<li>At recording</li>
+<li>When modelling data</li>
+<li>During processing data</li>
+<li>When visualizing data</li>
+</ul>
+As a result, we can visualize uncertainty at different levels, which gives us insights if problems exist at certain states of the data.</p>
+<h4>The data</h4>
+<img width='800px' src='https://christianbors.github.io/images/dimensions.png' />
+<p>
+Let us give an example of uncertainty introduced in data.
+We want to analyze multivariate time series, so a time series with multiple dimensions. Analyzing every dimension at once is difficult, making sense of the data is not feasible. However, we can automatically analyze the time series, by applying processing and segmenting algorithms. 
+</p>
