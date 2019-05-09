@@ -72,10 +72,6 @@ var surveyJSON = {
      type: "html",
      name: "question23",
      html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
-    },
-    {
-     type: "text",
-     name: "question18"
     }
    ]
   },
@@ -89,8 +85,8 @@ var surveyJSON = {
      correctAnswer: {
       S1: "1",
       S2: "4",
-      S3: "3",
-      S4: "2"
+      S3: "2",
+      S4: "3"
      },
      columns: [
       {
@@ -247,11 +243,11 @@ var surveyJSON = {
    title: "Chapter Introduction - Visualizing Uncertainty with Transparency"
   },
   {
-   name: "gradient_q1",
+   name: "gradient_p1",
    elements: [
     {
      type: "radiogroup",
-     name: "question2",
+     name: "gradient_q1",
      title: "Out of the highlighted purple (red frame) segments, which is the most certain?",
      correctAnswer: [
       "3"
@@ -278,17 +274,17 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "question3",
+     name: "gradient_q1_html",
      html: "\n<img width='100%' src='https://christianbors.github.io/images/gradient_annotated.png' />"
     }
    ]
   },
   {
-   name: "gradient_q2",
+   name: "gradient_p2",
    elements: [
     {
      type: "radiogroup",
-     name: "question5",
+     name: "gradient_q2",
      title: "Out of the highlighted section, which one has the least uncertainty?",
      correctAnswer: [
       "item1"
@@ -316,11 +312,11 @@ var surveyJSON = {
    ]
   },
   {
-   name: "gradient_q2_v2",
+   name: "gradient_p2_sort",
    elements: [
     {
      type: "matrix",
-     name: "question27",
+     name: "gradient_q2_sort",
      title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
      correctAnswer: {
       S1: "1",
@@ -359,17 +355,18 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "question26",
+     name: "gradient_q2_html",
      html: "<img width='100%' src='https://christianbors.github.io/images/list_slider/ul_gradient.png' />"
     }
    ]
   },
   {
-   name: "gradient_q3",
+   name: "gradient_p3",
    elements: [
     {
      type: "radiogroup",
-     name: "question10",
+     name: "gradient_q3",
+     visible: false,
      title: "Out of the highlighted results, which one shows the least uncertainty?",
      correctAnswer: [
       "item1"
@@ -397,7 +394,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "intro_disambiguation1",
+   name: "intro_threshold",
    elements: [
     {
      type: "html",
@@ -413,11 +410,11 @@ var surveyJSON = {
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
   },
   {
-   name: "disambiguation_q1",
+   name: "threshold_p1",
    elements: [
     {
      type: "radiogroup",
-     name: "question6",
+     name: "threshold_q1",
      title: "Out of the highlighted (red frame) segments, which is the most certain?",
      correctAnswer: [
       "item1"
@@ -445,11 +442,11 @@ var surveyJSON = {
    ]
   },
   {
-   name: "disambiguation_q2",
+   name: "threshold_p2",
    elements: [
     {
      type: "radiogroup",
-     name: "question7",
+     name: "threshold_q3",
      title: "Out of the highlighted (red frame) segments, which is the most certain?",
      correctAnswer: [
       "item2"
@@ -506,18 +503,52 @@ var surveyJSON = {
      name: "question13",
      html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/slider_list_result_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"
     }
-   ]
+   ],
+   visible: false
   },
   {
    name: "intro_correlation",
    elements: [
     {
      type: "html",
-     name: "question19",
+     name: "intro_corr",
      html: "<h4>Correlations of Uncertainties</h4>\n<p>\nThe following visualization shows different uncertainties.\nIt is possible that these uncertainties correlate.\nBut what exactly does this mean?\n</p>\n<p>\nCorrelation is a measure of statistical relation between variables, in our case different uncertainty dimensions.\nIt can be used to describe how strong a relation between variables is, and if there is a positive or negative relation.\nIt is possible visually inspect a dataset for correlation.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_1.png' />\n<p>\nThis example shows a positive correlation: In the orange boxes you can see an increase of uncertainty and at the same time the uncertainty increases in the blue box.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_2.png' />\n<p>\nThis example shows no correlation between uncertainties: While there is no change in uncertainty in the orange boxes, uncertainties change in the blue boxes.\n</p>\n<p>\nIn the following examples your task is to judge if there is a correlation between the different uncertainties.\n</p>"
     }
    ],
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
+  },
+  {
+   name: "correlation_q1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "corr_q1",
+     title: "Is there a correlation between the uncertainties shown in the blue frame and the uncertainties shown in the orange frame?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Positive Correlation"
+      },
+      {
+       value: "2",
+       text: "Negative Correlation"
+      },
+      {
+       value: "3",
+       text: "No Correlation"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question32",
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_q1_corr.png' />"
+    }
+   ]
   }
  ],
  sendResultOnPageNext: true,
@@ -543,11 +574,12 @@ var surveyJSON = {
 function sendDataToServer(survey) {
 	for (var i = 0; i < survey.pages.length; i++) {
 		if (survey.pages[i].questions[0] != null)
-			var isCorrect = survey.pages[i].questions[0].correctAnswer == survey.pages[i].questions[0].value;
+			//TODO: make correct validation
+			// var isCorrect = survey.pages[i].questions[0].correctAnswer == survey.pages[i].questions[0].value;
 			survey.pages[i].questions[0].value = {
 				result: survey.pages[i].questions[0].value, 
-				time: survey.pages[i].timeSpent,
-				isCorrect: isCorrect
+				time: survey.pages[i].timeSpent
+				// isCorrect: isCorrect
 			};
 		console.log(survey.pages[i].timeSpent);
 	}
