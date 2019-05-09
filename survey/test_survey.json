@@ -304,22 +304,6 @@
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
   },
   {
-   name: "intro_value_uncertainty",
-   elements: [
-    {
-     type: "html",
-     name: "question18",
-     html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segment.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
-    },
-    {
-     type: "html",
-     name: "question19",
-     html: "<h4>Visualizing Uncertainty With Grey Value Thresholds</h4>\n<p>\nThis first visualization shows uncertainty as grey values:\n<ul>\n<li>If the certainty of a time stamp is above the selected threshold, the segment's label color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example result visualized with uncertainty shown as grey segments. Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.\n</p>"
-    }
-   ],
-   title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
-  },
-  {
    name: "disambiguation_q1",
    elements: [
     {
@@ -414,6 +398,22 @@
      html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/slider_list_result_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"
     }
    ]
+  },
+  {
+   name: "intro_value_uncertainty",
+   elements: [
+    {
+     type: "html",
+     name: "question18",
+     html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segment.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
+    },
+    {
+     type: "html",
+     name: "question19",
+     html: "<h4>Visualizing Different Sources of Uncertainty</h4>\n<p>\nThe following visualization shows a second source of uncertainty. An additional visualization shows these other uncertainties. Your goal is to analyze if one uncertainty influences the other.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_annotated.png' />\n<p>\nLooking at the new visualization you can see four lines, where two lines introduced uncertainty (VISSECTSamplingDataProcessor and VISSECTMovingAverageDataProcessor). You can see that the highlighted areas have more uncertainty influencing the result than the rest \n</p>"
+    }
+   ],
+   title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
   }
  ],
  showProgressBar: "bottom",
