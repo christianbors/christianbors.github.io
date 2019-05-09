@@ -154,7 +154,7 @@
     {
      type: "html",
      name: "question30",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q2.png' />"
     }
    ]
   },
@@ -494,17 +494,12 @@
    ]
   },
   {
-   name: "intro_value_uncertainty",
+   name: "intro_correlation",
    elements: [
     {
      type: "html",
-     name: "question18",
-     html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segment.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
-    },
-    {
-     type: "html",
      name: "question19",
-     html: "<h4>Visualizing Different Sources of Uncertainty</h4>\n<p>\nThe following visualization shows a second source of uncertainty. An additional visualization shows these other uncertainties. Your goal is to analyze if one uncertainty influences the other.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_annotated.png' />\n<p>\nLooking at the new visualization you can see four lines, where two lines introduced uncertainty (VISSECTSamplingDataProcessor and VISSECTMovingAverageDataProcessor). You can see that the highlighted areas have more uncertainty influencing the result than the rest \n</p>"
+     html: "<h4>Correlations of Uncertainties</h4>\n<p>\nThe following visualization shows different uncertainties.\nIt is possible that these uncertainties correlate.\nBut what exactly does this mean?\n</p>\n<p>\nCorrelation is a measure of statistical relation between variables, in our case different uncertainty dimensions.\nIt can be used to describe how strong a relation between variables is, and if there is a positive or negative relation.\nIt is possible visually inspect a dataset for correlation.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_1.png' />\n<p>\nThis example shows a positive correlation: In the orange box you can see an increase of uncertainty and at the same time the uncertainty increases in the blue box.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_2.png' />\n<p>\nThis example shows no correlation between uncertainties: While there is an increase of uncertainty in the orange box, uncertainty does not change in the blue box.\n</p>\n<p>\nIn the following examples your task is to judge if there is a correlation between the different uncertainties.\n</p>"
     }
    ],
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
