@@ -69,6 +69,100 @@
    elements: [
     {
      type: "matrix",
+     name: "question24",
+     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "1",
+      S2: "4",
+      S3: "3",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3."
+      },
+      {
+       value: "4",
+       text: "4. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "S1",
+       text: "Segment A"
+      },
+      {
+       value: "S2",
+       text: "Segment B"
+      },
+      {
+       value: "S3",
+       text: "Segment C"
+      },
+      {
+       value: "S4",
+       text: "Segment D"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question28",
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
+    }
+   ]
+  },
+  {
+   name: "line_plot_q3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question29",
+     title: "Out of the highlighted (red frame) segments, which represents the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Frame A"
+      },
+      {
+       value: "2",
+       text: "Frame B"
+      },
+      {
+       value: "3",
+       text: "Frame C"
+      },
+      {
+       value: "4",
+       text: "Frame D"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question30",
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
+    }
+   ]
+  },
+  {
+   name: "line_plot_q4",
+   elements: [
+    {
+     type: "matrix",
      name: "question35",
      title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
      correctAnswer: {
