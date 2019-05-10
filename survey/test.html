@@ -46,7 +46,7 @@ var surveyJSON = {
      name: "question22",
      title: "Out of the highlighted (red frame) segments, which represents the most certain?",
      correctAnswer: [
-      "2"
+      "1"
      ],
      choices: [
       {
@@ -56,14 +56,6 @@ var surveyJSON = {
       {
        value: "2",
        text: "Frame B"
-      },
-      {
-       value: "3",
-       text: "Frame C"
-      },
-      {
-       value: "4",
-       text: "Frame D"
       }
      ],
      otherText: "Frame D"
@@ -575,6 +567,14 @@ function sendDataToServer(survey) {
 	for (var i = 0; i < survey.pages.length; i++) {
 		if (survey.pages[i].questions[0] != null)
 			//TODO: make correct validation
+			// var answer = survey.pages[i].questions[0].value;
+			// if (jQuery.isPlainObject(answer)) {
+			// 	$.each(answer, )
+			// }
+
+			// $.each(survey.pages[i].questions[0].correctAnswer) {
+
+			// }
 			// var isCorrect = survey.pages[i].questions[0].correctAnswer == survey.pages[i].questions[0].value;
 			survey.pages[i].questions[0].value = {
 				result: survey.pages[i].questions[0].value, 

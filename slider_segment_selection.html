@@ -11,7 +11,7 @@
 </div>
 <!-- <input  type="range" min="0" max="1" value="0" step="1" /> -->
 
-<img id='img' width='100%' src='images/slider/u_10.png' />
+<img id='img' width='100%' src='images/slider/u_00.png' />
 
 <script type="text/javascript">
 	var img = document.getElementById('img');
@@ -23,14 +23,19 @@
 		'0.1': 'images/slider/u_10.png', 
 		'0.15': 'images/slider/u_15.png', 
 		'0.2': 'images/slider/u_20.png', 
+		'0.22': 'images/slider/u_22.png', 
 		'0.25': 'images/slider/u_25.png', 
 		'0.3': 'images/slider/u_30.png', 
 		'0.35': 'images/slider/u_35.png', 
 		'0.4': 'images/slider/u_40.png', 
+		'0.42': 'images/slider/u_42.png', 
 		'0.45': 'images/slider/u_45.png', 
+		'0.48': 'images/slider/u_48.png', 
 		'0.5': 'images/slider/u_50.png', 
+		'0.52': 'images/slider/u_52.png', 
 		'0.55': 'images/slider/u_55.png', 
 		'0.6': 'images/slider/u_60.png', 
+		'0.62': 'images/slider/u_62.png', 
 		'0.65': 'images/slider/u_65.png', 
 		'0.7': 'images/slider/u_70.png', 
 		'0.75': 'images/slider/u_75.png',
@@ -44,7 +49,8 @@
 	function setImage(obj)
 	{
 		var value = obj.value;
-		img.src = img_lib[value];
+		if(img_lib[value] != null)
+			img.src = img_lib[value];
 	    val.textContent = value;
 	}
 </script>
