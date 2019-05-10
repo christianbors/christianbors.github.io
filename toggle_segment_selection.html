@@ -1,0 +1,79 @@
+<!-- <link type="text/css" rel="stylesheet" href="stylesheets/main.css" /> -->
+<script>
+	window.onbeforeunload = function(event) {
+		localStorage.setItem('test', 2);
+	};
+</script>
+
+<!-- <span id="val">0.1</span> -->
+<!-- <div class="slidecontainer">
+  <input onchange="setImage(this)" type="range" min="0" max="1" value="0" step="0.05" class="slider" id="myRange">
+</div> -->
+<span><input onchange="setImage(this)" type="checkbox" name="show_uncertainty" id="toggle">Show Uncertainty</span>
+<!-- <input  type="range" min="0" max="1" value="0" step="1" /> -->
+
+<img id='img' width='100%' src='images/toggle/a/toggle_none.png' />
+
+<script type="text/javascript">
+	var img = document.getElementById('img');
+	var toggle = document.getElementById('toggle');
+	var img_show_uncertainty = "images/toggle/a/toggle_gradient.png";
+	var img_none = "images/toggle/a/toggle_none.png";
+	// var img_lib = {
+	// 	'0':'images/slider/u_00.png', 
+	// 	'0.00':'images/slider/u_00.png', 
+	// 	'0.05':'images/slider/u_05.png', 
+	// 	'0.1': 'images/slider/u_10.png', 
+	// 	'0.15': 'images/slider/u_15.png', 
+	// 	'0.2': 'images/slider/u_20.png', 
+	// 	'0.22': 'images/slider/u_22.png', 
+	// 	'0.25': 'images/slider/u_25.png', 
+	// 	'0.3': 'images/slider/u_30.png', 
+	// 	'0.35': 'images/slider/u_35.png', 
+	// 	'0.4': 'images/slider/u_40.png', 
+	// 	'0.42': 'images/slider/u_42.png', 
+	// 	'0.45': 'images/slider/u_45.png', 
+	// 	'0.48': 'images/slider/u_48.png', 
+	// 	'0.5': 'images/slider/u_50.png', 
+	// 	'0.52': 'images/slider/u_52.png', 
+	// 	'0.55': 'images/slider/u_55.png', 
+	// 	'0.6': 'images/slider/u_60.png', 
+	// 	'0.62': 'images/slider/u_62.png', 
+	// 	'0.65': 'images/slider/u_65.png', 
+	// 	'0.7': 'images/slider/u_70.png', 
+	// 	'0.75': 'images/slider/u_75.png',
+	// 	'0.8': 'images/slider/u_80.png', 
+	// 	'0.85': 'images/slider/u_85.png',
+	// 	'0.9': 'images/slider/u_90.png',
+	// 	'0.95': 'images/slider/u_95.png',
+	// 	'1': 'images/slider/u_100.png'
+	// };
+	// var img_array = ['http://www.w3schools.com/images/w3logotest2.png', 'http://www.w3schools.com/html/img_html5_html5.gif'];
+	function setImage(checkbox)
+	{
+		var checked = checkbox.checked;
+		
+		if(checked)
+			img.src = img_show_uncertainty;
+		else
+			img.src = img_none;
+	    // checkbox.checked = !checkbox.checked;
+	}
+</script>
+<!-- <script type="module"> 
+
+import notebook from "https://api.observablehq.com/@christianbors/embed-vis-only.js";  //  "download code" url
+
+document.querySelector('.notebook-content').innerHTML =notebook.modules[0].variables
+.filter(d=>d)
+.map((d,i)=>` <div class=" observable-wrapper div-number-${i}"></div>`)
+.join(''); 
+
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/runtime@3/dist/runtime.js"; 
+let i=1;
+Runtime.load(notebook, (variable) => { 
+  return new Inspector(document.querySelector(`.observable-wrapper:nth-child(${i++})`));
+ }); 
+
+
+</script> -->
