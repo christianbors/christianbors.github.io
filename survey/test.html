@@ -12,18 +12,122 @@ Survey.Survey.cssType = "bootstrap";
 var surveyJSON = {
  pages: [
   {
-   name: "intro_01",
+   name: "intro",
    elements: [
     {
      type: "html",
      name: "question4",
-     html: "<h4>Welcome to the Survey of Visualizing Uncertainty</h4>\n\n<p>\nThe evaluation is split up into three chapters, with two sessions measuring your performance, and ending with a questionnaire to tell us your preferences on specific visualization designs.\n</p>\n<p>\nThe two performance evaluations will test different visualizations to support you with:\n<ul>\n  <li>Finding sources of uncertainty.</li>\n  <li>Selecting the best result when uncertainty is present in the data.</li>\n</ul>\n</p>\n\n<h4>What does this mean?</h4>\n<p>Sometimes, data is affected by uncertainty. Showing this uncertainty to the end user (you!) allows them to assess if the results can be trusted.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/one_result.png' />\n<p>This yields a one-dimensional time series of segments.\nThe time series is broken down into logical segments by the algorithms, which can be analyzed by the user more easily.</p>\n<img width='800px' src='https://christianbors.github.io/images/ts_seg_movements.png' />\n<p>\nThis particular time series can be represented by a stick figure, with color representing the different segments.\nHowever, the segments are assigned labels only with a certain probability, so there is uncertainty in the processing.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/ts_segmentations.png' />\n<!-- <img width='200px' src='https://christianbors.github.io/images/labels.png' /> -->\n<p>Usually multiple alternative segmentation results are computed which contain different degrees of uncertainty.\n</p>\n<h4>Finding sources of uncertainty</h4>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities.png' />\n<p>\nWe can visualize these probabilities, as shown in this view showing probabilities of different segment labels over time.\nThe two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different likelihood.\nThe blue frame shows a less significant result, implying that this segment is less certain.\n</p>\n\n<!-- <h4>Selecting the best result when uncertainty is present in the data</h4>\n<p>Finding an optimal result depends on your analysis task. If you want the segmentation algorithm to detect a certain segment more accurately, high uncertainty in other parts of the data might not be interesting to you. So always consider what the goal of your analysis is!</p> -->\n<img width='800px' src='https://christianbors.github.io/images/probabilities_comparison.png' />\n<p>E.g., if you want to choose an segmentation result with a high probability (and low uncertainty), Result A is preferred over Result B, because there is a clear winner of labels with high probability.</p>"
+     html: "<h4>Welcome to the Survey of Visualizing Uncertainty</h4>\n\n<p>\nThe evaluation is split up into three chapters, with two sessions measuring your performance, and ending with a questionnaire to tell us your preferences on specific visualization designs.\n</p>\n<p>\nThe two performance evaluations will test different visualizations to support you with:\n<ul>\n  <li>Finding sources of uncertainty.</li>\n  <li>Selecting the best result when uncertainty is present in the data.</li>\n</ul>\n</p>\n\n<h4>What does this mean?</h4>\n<p>Sometimes, data is affected by uncertainty. Showing this uncertainty to the end user (you!) allows them to assess if the results can be trusted.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/one_result.png' />\n<p>This yields a one-dimensional time series of segments.\nThe time series is broken down into logical segments by the algorithms, which can be analyzed by the user more easily.</p>\n<img width='300px' src='https://christianbors.github.io/images/ts_seg_movements.png' />\n<p>\nMovement data can be recorded as a time series, with motion detection sensors logging motions in different directions. These can be processed into different segments (e.g., cook, eat, wash).\nHowever, the segments are assigned labels only with a certain probability, so there is uncertainty in the processing.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/ts_segmentations.png' />\n<!-- <img width='200px' src='https://christianbors.github.io/images/labels.png' /> -->\n<p>Usually multiple alternative segmentation results are computed which contain different degrees of uncertainty.\n</p>\n<h4>Finding sources of uncertainty</h4>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities.png' />\n<p>\nWe can visualize these probabilities, as shown in this view showing probabilities of different segment labels over time.\nThe two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different likelihood.\nThe blue frame shows a less significant result, implying that this segment is less certain.\n</p>\n\n<!-- <h4>Selecting the best result when uncertainty is present in the data</h4>\n<p>Finding an optimal result depends on your analysis task. If you want the segmentation algorithm to detect a certain segment more accurately, high uncertainty in other parts of the data might not be interesting to you. So always consider what the goal of your analysis is!</p> -->\n<img width='800px' src='https://christianbors.github.io/images/probabilities_comparison.png' />\n<p>E.g., if you want to choose an segmentation result with a high probability (and low uncertainty), Result A is preferred over Result B, because there is a clear winner of labels with high probability.</p>"
+    },
+    {
+     type: "dropdown",
+     name: "user_study_group",
+     title: "Please enter your group number here",
+     isRequired: true,
+     choices: [
+      {
+       value: "g1",
+       text: "Group 1"
+      },
+      {
+       value: "g2",
+       text: "Group 2"
+      },
+      {
+       value: "g3",
+       text: "Group 3"
+      },
+      {
+       value: "g4",
+       text: "Group 4"
+      },
+      {
+       value: "g5",
+       text: "Group 5"
+      },
+      {
+       value: "g6",
+       text: "Group 6"
+      },
+      {
+       value: "g7",
+       text: "Group 7"
+      },
+      {
+       value: "g8",
+       text: "Group 8"
+      },
+      {
+       value: "g9",
+       text: "Group 9"
+      },
+      {
+       value: "g10",
+       text: "Group 10"
+      },
+      {
+       value: "g11",
+       text: "Group 11"
+      },
+      {
+       value: "g12",
+       text: "Group 12"
+      },
+      {
+       value: "g13",
+       text: "Group 13"
+      },
+      {
+       value: "g14",
+       text: "Group 14"
+      },
+      {
+       value: "g15",
+       text: "Group 15"
+      },
+      {
+       value: "g16",
+       text: "Group 16"
+      },
+      {
+       value: "g17",
+       text: "Group 17"
+      },
+      {
+       value: "g18",
+       text: "Group 18"
+      },
+      {
+       value: "g19",
+       text: "Group 19"
+      },
+      {
+       value: "g20",
+       text: "Group 20"
+      },
+      {
+       value: "g21",
+       text: "Group 21"
+      },
+      {
+       value: "g22",
+       text: "Group 22"
+      },
+      {
+       value: "g23",
+       text: "Group 23"
+      },
+      {
+       value: "g24",
+       text: "Group 24"
+      }
+     ]
     }
    ],
    title: "Introduction"
   },
   {
-   name: "intro_line_plot",
+   name: "A_intro_lineplot",
    elements: [
     {
      type: "html",
@@ -39,7 +143,7 @@ var surveyJSON = {
    title: "Chapter Introduction - Visualizing Uncertainty"
   },
   {
-   name: "line_plot_q1",
+   name: "A_p1",
    elements: [
     {
      type: "radiogroup",
@@ -68,7 +172,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "line_plot_q2",
+   name: "A_p2",
    elements: [
     {
      type: "matrix",
@@ -125,7 +229,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "line_plot_q3",
+   name: "A_p3",
    elements: [
     {
      type: "radiogroup",
@@ -162,7 +266,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "line_plot_q4",
+   name: "A_p4",
    elements: [
     {
      type: "matrix",
@@ -219,7 +323,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "intro_gradient",
+   name: "B_intro_uvis",
    elements: [
     {
      type: "html",
@@ -229,20 +333,25 @@ var surveyJSON = {
     {
      type: "html",
      name: "question14",
-     html: "<h4>Visualizing Uncertainty with Transparency</h4>\n<p>\nThis first visualization shows uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the segment/label becomes more visible. </li>\n<li>If there is high uncertainty in the data, the segment becomes more transparent. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/gradient_raw.png' />\n<p>The figure shows an example result visualized with uncertainty shown as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient length between labels indicates that it is uncertain where the label actually starts.</p>"
+     html: "<h4>Visualizing Uncertainty with Transparency</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes more saturated. </li>\n<li>If there is high uncertainty in the data, the segment becomes more transparent. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/gradient_raw.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient at the beginning and end of labels indicates that it is uncertain where the label actually starts.</p>"
+    },
+    {
+     type: "html",
+     name: "question17",
+     html: "<h4>Visualizing Uncertainty with a Threshold</h4>\n<p>\nThis visualization shows all uncertain segments which cannot be associated with a label with a probability above a certain threshold as grey values:\n<ul>\n<li>If the certainty of a segment is above the selected threshold, the corresponding color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example of visualizing uncertainty shown as grey segments if their label probability is below a certain threshold. Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.\n</p>"
     }
    ],
-   title: "Chapter Introduction - Visualizing Uncertainty with Transparency"
+   title: "Introduction - Visualizing Uncertainty with Transparency and Thresholds"
   },
   {
-   name: "gradient_p1",
+   name: "B_p1",
    elements: [
     {
      type: "radiogroup",
      name: "gradient_q1",
-     title: "Out of the highlighted purple (red frame) segments, which is the most certain?",
+     title: "Out of the highlighted purple (orange frame) segments, which is the most certain?",
      correctAnswer: [
-      "3"
+      "2"
      ],
      choices: [
       {
@@ -252,14 +361,6 @@ var surveyJSON = {
       {
        value: "2",
        text: "Frame B"
-      },
-      {
-       value: "3",
-       text: "Frame C"
-      },
-      {
-       value: "4",
-       text: "Frame D"
       }
      ],
      otherText: "Frame D"
@@ -267,12 +368,41 @@ var surveyJSON = {
     {
      type: "html",
      name: "gradient_q1_html",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/gradient_annotated.png' />"
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/slider_b/u_gradient.png' />"
     }
    ]
   },
   {
-   name: "gradient_p2",
+   name: "B_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "gradient_q4",
+     title: "Out of the highlighted purple (red frame) segments, which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Frame A"
+      },
+      {
+       value: "2",
+       text: "Frame B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "gradient_q2_html1",
+     html: "\n<img width='100%' src='https://raw.githubusercontent.com/christianbors/christianbors.github.io/master/images/slider/u_gradient.png' />"
+    }
+   ]
+  },
+  {
+   name: "B_p3_sort",
    elements: [
     {
      type: "radiogroup",
@@ -298,13 +428,13 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "question9",
+     name: "gradient_q3_html",
      html: "<img width='100%' src='https://christianbors.github.io/images/list_slider/ul_gradient.png' />"
     }
    ]
   },
   {
-   name: "gradient_p2_sort",
+   name: "B_p4_sort",
    elements: [
     {
      type: "matrix",
@@ -353,7 +483,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "gradient_p3",
+   name: "B_p3",
    elements: [
     {
      type: "radiogroup",
@@ -386,23 +516,19 @@ var surveyJSON = {
    ]
   },
   {
-   name: "intro_threshold",
+   name: "C_intro_threshold",
    elements: [
     {
      type: "html",
      name: "question16",
      html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segmentation.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
-    },
-    {
-     type: "html",
-     name: "question17",
-     html: "<h4>Visualizing Uncertainty With Grey Value Thresholds</h4>\n<p>\nThis first visualization shows uncertainty as grey values:\n<ul>\n<li>If the certainty of a time stamp is above the selected threshold, the segment's label color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example result visualized with uncertainty shown as grey segments. Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.\n</p>"
     }
    ],
+   visible: false,
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
   },
   {
-   name: "threshold_p1",
+   name: "C_p1",
    elements: [
     {
      type: "radiogroup",
@@ -434,7 +560,39 @@ var surveyJSON = {
    ]
   },
   {
-   name: "threshold_p2",
+   name: "C_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question5",
+     title: "Out of the highlighted (red frame) segments, which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "item1",
+       text: "Frame A"
+      },
+      {
+       value: "item2",
+       text: "Frame B"
+      },
+      {
+       value: "item3",
+       text: "Frame C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question6",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/toggle_segment_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p3",
    elements: [
     {
      type: "radiogroup",
@@ -466,7 +624,7 @@ var surveyJSON = {
    ]
   },
   {
-   name: "disambiguation_q3",
+   name: "C_p4",
    elements: [
     {
      type: "radiogroup",
@@ -499,7 +657,7 @@ var surveyJSON = {
    visible: false
   },
   {
-   name: "intro_correlation",
+   name: "D_intro_correlation",
    elements: [
     {
      type: "html",
@@ -507,10 +665,11 @@ var surveyJSON = {
      html: "<h4>Correlations of Uncertainties</h4>\n<p>\nThe following visualization shows different uncertainties.\nIt is possible that these uncertainties correlate.\nBut what exactly does this mean?\n</p>\n<p>\nCorrelation is a measure of statistical relation between variables, in our case different uncertainty dimensions.\nIt can be used to describe how strong a relation between variables is, and if there is a positive or negative relation.\nIt is possible visually inspect a dataset for correlation.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_1.png' />\n<p>\nThis example shows a positive correlation: In the orange boxes you can see an increase of uncertainty and at the same time the uncertainty increases in the blue box.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_2.png' />\n<p>\nThis example shows no correlation between uncertainties: While there is no change in uncertainty in the orange boxes, uncertainties change in the blue boxes.\n</p>\n<p>\nIn the following examples your task is to judge if there is a correlation between the different uncertainties.\n</p>"
     }
    ],
+   visible: false,
    title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
   },
   {
-   name: "correlation_q1",
+   name: "D_p1",
    elements: [
     {
      type: "radiogroup",
@@ -540,19 +699,87 @@ var surveyJSON = {
      name: "question32",
      html: "\n<img width='100%' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_q1_corr.png' />"
     }
-   ]
+   ],
+   visible: false
+  },
+  {
+   name: "D_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question2",
+     title: "Is there a correlation between the uncertainties shown in the blue frame and the uncertainties shown in the orange frames?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Correlation in Frame A"
+      },
+      {
+       value: "2",
+       text: "Correlation in Frame B"
+      },
+      {
+       value: "3",
+       text: "Correlation in both frames"
+      },
+      {
+       value: "4",
+       text: "No Correlation"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question3",
+     html: "\n<img width='100%' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_q2_a_corr_b_corr.png' />"
+    }
+   ],
+   visible: false
+  },
+  {
+   name: "D_p3"
   }
  ],
  sendResultOnPageNext: true,
  showProgressBar: "top",
- firstPageIsStarted: true,
  showTimerPanel: "bottom",
  showTimerPanelMode: "survey"
 };
 
+var permutations = {
+g1: ["A","B","C","D","E","F"],
+g2: ["B","A","C","D","F","E"],
+g3: ["C","A","B","D","E","F"],
+g4: ["A","C","B","D","F","E"],
+g5: ["B","C","A","D","E","F"],
+g6: ["C","B","A","D","F","E"],
+g7: ["C","B","D","A","E","F"],
+g8: ["B","C","D","A","F","E"],
+g9: ["D","C","B","A","E","F"],
+g10: ["C","D","B","A","F","E"],
+g11: ["B","D","C","A","E","F"],
+g12: ["D","B","C","A","F","E"],
+g13: ["D","A","C","B","E","F"],
+g14: ["A","D","C","B","F","E"],
+g15: ["C","D","A","B","E","F"],
+g16: ["D","C","A","B","F","E"],
+g17: ["A","C","D","B","E","F"],
+g18: ["C","A","D","B","F","E"],
+g19: ["B","A","D","C","E","F"],
+g20: ["A","B","D","C","F","E"],
+g21: ["D","B","A","C","E","F"],
+g22: ["B","D","A","C","F","E"],
+g23: ["A","D","B","C","E","F"],
+g24: ["D","A","B","C","F","E"]
+}
 
   var survey = new Survey.Survey(surveyJSON);
   //set the place holder for "email" question
+
   var emailQuestion = survey.getQuestionByName("question18");
   var dt = new Date();
   if (emailQuestion) emailQuestion.value = dt.toLocaleTimeString();
@@ -586,9 +813,16 @@ function sendDataToServer(survey) {
     survey.sendResult('a7addf27-87cb-47e2-bda8-a07a37b0ca76');
 }
 
+function onStartSortQuestionsByPermutation(survey) {
+	var grp = survey.getQuestionByName("user_study_group").value;
+	console.log("st");
+	// TODO: Sort by permutation
+}
+
 var survey = new Survey.Model(surveyJSON);
 $("#surveyContainer").Survey({
     model: survey,
-    onComplete: sendDataToServer
+    onComplete: sendDataToServer,
+    onStarted: onStartSortQuestionsByPermutation
 });
 </script>
