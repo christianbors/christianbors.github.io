@@ -1,25 +1,41 @@
-<h4>Welcome to the evaluation of visualizing uncertainty in time series segments</h4>
+<h4>Welcome to the Survey of Visualizing Uncertainty</h4>
 
 <p>
 The evaluation is split up into three chapters, with two sessions measuring your performance, and ending with a questionnaire to tell us your preferences on specific visualization designs.
 </p>
 <p>
-The two performance evaluations will test different visualizations that should support you with:
+The two performance evaluations will test different visualizations to support you with:
 <ul>
-  <li>Decision making under the presence of uncertainty</li>
-  <li>Finding evidence for sources of uncertainty</li>
+  <li>Finding sources of uncertainty.</li>
+  <li>Selecting the best result when uncertainty is present in the data.</li>
 </ul>
 </p>
 
 <h4>What does this mean?</h4>
-<p>Sometimes, data is affected by uncertainty. Showing this uncertainty to the end user (you!) allows them to assess if the results can be trusted. This is due to different factors. Uncertainty can be introduced (and also measured) at different levels:
-<ul>
-<li>At recording</li>
-<li>When modelling data</li>
-<li>During processing data</li>
-<li>When visualizing data</li>
-</ul>
-As a result, we can visualize uncertainty at different levels, which gives us insights if problems exist at certain states of the data.</p>
-<h4>The data</h4>
-<p>We analyze multivariate time series, so a time series measurements with multiple dimensions.
+<p>Sometimes, data is affected by uncertainty. Showing this uncertainty to the end user (you!) allows them to assess if the results can be trusted.
 </p>
+<img width='800px' src='https://christianbors.github.io/images/one_result.png' />
+<p>This yields a one-dimensional time series of segments.
+The time series is broken down into logical segments by the algorithms, which can be analyzed by the user more easily.</p>
+<img width='300px' src='https://christianbors.github.io/images/ts_seg_movements.png' />
+<p>
+Movement data can be recorded as a time series, with motion detection sensors logging motions in different directions. These can be processed into different segments (e.g., cook, eat, wash).
+However, the segments are assigned labels only with a certain probability, so there is uncertainty in the processing.
+</p>
+<img width='800px' src='https://christianbors.github.io/images/ts_segmentations.png' />
+<!-- <img width='200px' src='https://christianbors.github.io/images/labels.png' /> -->
+<p>Usually multiple alternative segmentation results are computed which contain different degrees of uncertainty.
+</p>
+<h4>Finding sources of uncertainty</h4>
+</p>
+<img width='800px' src='https://christianbors.github.io/images/probabilities.png' />
+<p>
+We can visualize these probabilities, as shown in this view showing probabilities of different segment labels over time.
+The two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different likelihood.
+The blue frame shows a less significant result, implying that this segment is less certain.
+</p>
+
+<!-- <h4>Selecting the best result when uncertainty is present in the data</h4>
+<p>Finding an optimal result depends on your analysis task. If you want the segmentation algorithm to detect a certain segment more accurately, high uncertainty in other parts of the data might not be interesting to you. So always consider what the goal of your analysis is!</p> -->
+<img width='800px' src='https://christianbors.github.io/images/probabilities_comparison.png' />
+<p>E.g., if you want to choose an segmentation result with a high probability (and low uncertainty), Result A is preferred over Result B, because there is a clear winner of labels with high probability.</p>
