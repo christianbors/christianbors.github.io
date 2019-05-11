@@ -9,16 +9,16 @@
 <!-- <div class="slidecontainer">
   <input onchange="setImage(this)" type="range" min="0" max="1" value="0" step="0.05" class="slider" id="myRange">
 </div> -->
-<span><input onchange="setImage(this)" type="checkbox" name="show_uncertainty" id="toggle">Show Uncertainty</span>
+<span><input onchange="setImage(this)" type="checkbox" name="show_uncertainty" checked id="toggle">Show Uncertainty</span>
 <!-- <input  type="range" min="0" max="1" value="0" step="1" /> -->
 
-<img id='img' width='100%' src='t1_95.png' />
+<img id='img' width='100%' src='t1_gradient.png' />
 
 <script type="text/javascript">
 	var img = document.getElementById('img');
 	var toggle = document.getElementById('toggle');
 	var img_show_uncertainty = "t1_gradient.png";
-	var img_none = "t1_95.png";
+	var img_none = "t1_none.png";
 	
 	function setImage(checkbox)
 	{
