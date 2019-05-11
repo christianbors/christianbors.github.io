@@ -1,0 +1,67 @@
+<!-- <link type="text/css" rel="stylesheet" href="stylesheets/main.css" /> -->
+<script>
+	window.onbeforeunload = function(event) {
+		localStorage.setItem('test', 2);
+	};
+</script>
+
+<span>Threshold: </span><span id="val">0.1</span>
+<div class="slidecontainer">
+  <input onchange="setImage(this)" type="range" min="0" max="1" value="0" step="0.05" class="slider" id="myRange">
+</div>
+<!-- <input  type="range" min="0" max="1" value="0" step="1" /> -->
+
+<img id='img' width='100%' src='t5_00.png' />
+
+<script type="text/javascript">
+	var img = document.getElementById('img');
+	var val = document.getElementById('val');
+	var img_lib = {
+		'0':'t5_00.png', 
+		'0.00':'t5_00.png', 
+		'0.05':'t5_05.png', 
+		'0.1': 't5_10.png', 
+		'0.15': 't5_15.png', 
+		'0.2': 't5_20.png', 
+		'0.25': 't5_25.png', 
+		'0.3': 't5_30.png', 
+		'0.35': 't5_35.png', 
+		'0.4': 't5_40.png', 
+		'0.45': 't5_45.png', 
+		'0.5': 't5_50.png', 
+		'0.55': 't5_55.png', 
+		'0.6': 't5_60.png', 
+		'0.65': 't5_65.png', 
+		'0.7': 't5_70.png', 
+		'0.75': 't5_75.png',
+		'0.8': 't5_80.png', 
+		'0.85': 't5_85.png',
+		'0.9': 't5_90.png',
+		'0.95': 't5_95.png',
+		'1': 't5_95.png'
+	};
+	// var img_array = ['http://www.w3schools.com/images/w3logotest2.png', 'http://www.w3schools.com/html/img_html5_html5.gif'];
+	function setImage(obj)
+	{
+		var value = obj.value;
+		img.src = img_lib[value];
+	    val.textContent = value;
+	}
+</script>
+<!-- <script type="module"> 
+
+import notebook from "https://api.observablehq.com/@christianbors/embed-vis-only.js";  //  "download code" url
+
+document.querySelector('.notebook-content').innerHTML =notebook.modules[0].variables
+.filter(d=>d)
+.map((d,i)=>` <div class=" observable-wrapper div-number-${i}"></div>`)
+.join(''); 
+
+import {Inspector, Runtime} from "https://unpkg.com/@observablehq/runtime@3/dist/runtime.js"; 
+let i=1;
+Runtime.load(notebook, (variable) => { 
+  return new Inspector(document.querySelector(`.observable-wrapper:nth-child(${i++})`));
+ }); 
+
+
+</script> -->

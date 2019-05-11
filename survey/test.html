@@ -167,69 +167,12 @@ var surveyJSON = {
     {
      type: "html",
      name: "question23",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
+     html: "\n<img width='100%' src='https://christianbors.github.io/t1/t1_linechart.png' />"
     }
    ]
   },
   {
    name: "A_p2",
-   elements: [
-    {
-     type: "matrix",
-     name: "question24",
-     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
-     correctAnswer: {
-      S1: "1",
-      S2: "4",
-      S3: "2",
-      S4: "3"
-     },
-     columns: [
-      {
-       value: "1",
-       text: "1. (Most Certain)"
-      },
-      {
-       value: "2",
-       text: "2."
-      },
-      {
-       value: "3",
-       text: "3."
-      },
-      {
-       value: "4",
-       text: "4. (Least Certain)"
-      }
-     ],
-     rows: [
-      {
-       value: "S1",
-       text: "Segment A"
-      },
-      {
-       value: "S2",
-       text: "Segment B"
-      },
-      {
-       value: "S3",
-       text: "Segment C"
-      },
-      {
-       value: "S4",
-       text: "Segment D"
-      }
-     ]
-    },
-    {
-     type: "html",
-     name: "question28",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q1.png' />"
-    }
-   ]
-  },
-  {
-   name: "A_p3",
    elements: [
     {
      type: "radiogroup",
@@ -261,64 +204,7 @@ var surveyJSON = {
     {
      type: "html",
      name: "question30",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q2.png' />"
-    }
-   ]
-  },
-  {
-   name: "A_p4",
-   elements: [
-    {
-     type: "matrix",
-     name: "question35",
-     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
-     correctAnswer: {
-      S1: "1",
-      S2: "4",
-      S3: "3",
-      S4: "2"
-     },
-     columns: [
-      {
-       value: "1",
-       text: "1. (Most Certain)"
-      },
-      {
-       value: "2",
-       text: "2."
-      },
-      {
-       value: "3",
-       text: "3."
-      },
-      {
-       value: "4",
-       text: "4. (Least Certain)"
-      }
-     ],
-     rows: [
-      {
-       value: "S1",
-       text: "Segment A"
-      },
-      {
-       value: "S2",
-       text: "Segment B"
-      },
-      {
-       value: "S3",
-       text: "Segment C"
-      },
-      {
-       value: "S4",
-       text: "Segment D"
-      }
-     ]
-    },
-    {
-     type: "html",
-     name: "question25",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/linechart/linechart_view_q2.png' />"
+     html: "\n<img width='100%' src='https://christianbors.github.io/t2/t2_linechart.png' />"
     }
    ]
   },
@@ -332,16 +218,11 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "question14",
-     html: "<h4>Visualizing Uncertainty with Transparency</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes more saturated. </li>\n<li>If there is high uncertainty in the data, the segment becomes more transparent. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/gradient_raw.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient at the beginning and end of labels indicates that it is uncertain where the label actually starts.</p>"
-    },
-    {
-     type: "html",
-     name: "question17",
-     html: "<h4>Visualizing Uncertainty with a Threshold</h4>\n<p>\nThis visualization shows all uncertain segments which cannot be associated with a label with a probability above a certain threshold as grey values:\n<ul>\n<li>If the certainty of a segment is above the selected threshold, the corresponding color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example of visualizing uncertainty shown as grey segments if their label probability is below a certain threshold. Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.\n</p>"
+     name: "question8",
+     html: "<h4>Visualizing Uncertainty with Transparency</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes more saturated. </li>\n<li>If there is high uncertainty in the data, the segment becomes more transparent. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/gradient_raw.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient at the beginning and end of labels indicates that it is uncertain where the label actually starts.</p>\n<h4>Interaction</h4>\n<p>Later you can toggle between the uncertainty transparency view and the regular result view, to see the original color of the segments. This is important to properly judge the color saturation.</p>"
     }
    ],
-   title: "Introduction - Visualizing Uncertainty with Transparency and Thresholds"
+   title: "Introduction - Visualizing Uncertainty with Transparency"
   },
   {
    name: "B_p1",
@@ -349,7 +230,7 @@ var surveyJSON = {
     {
      type: "radiogroup",
      name: "gradient_q1",
-     title: "Out of the highlighted purple (orange frame) segments, which is the most certain?",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
       "2"
      ],
@@ -368,7 +249,7 @@ var surveyJSON = {
     {
      type: "html",
      name: "gradient_q1_html",
-     html: "\n<img width='100%' src='https://christianbors.github.io/images/slider_b/u_gradient.png' />"
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t1/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
@@ -378,9 +259,9 @@ var surveyJSON = {
     {
      type: "radiogroup",
      name: "gradient_q4",
-     title: "Out of the highlighted purple (red frame) segments, which is the most certain?",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
-      "1"
+      "2"
      ],
      choices: [
       {
@@ -396,18 +277,51 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "gradient_q2_html1",
-     html: "\n<img width='100%' src='https://raw.githubusercontent.com/christianbors/christianbors.github.io/master/images/slider/u_gradient.png' />"
+     name: "question7",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t2/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
   {
-   name: "B_p3_sort",
+   name: "B_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question9",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "3"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Frame A"
+      },
+      {
+       value: "2",
+       text: "Frame B"
+      },
+      {
+       value: "3",
+       text: "Frame C"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question10",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p4",
    elements: [
     {
      type: "radiogroup",
      name: "gradient_q2",
-     title: "Out of the highlighted section, which one has the least uncertainty?",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
       "item1"
      ],
@@ -428,22 +342,54 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "gradient_q3_html",
-     html: "<img width='100%' src='https://christianbors.github.io/images/list_slider/ul_gradient.png' />"
+     name: "question11",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t4/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
   {
-   name: "B_p4_sort",
+   name: "B_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question18",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "item1",
+       text: "Section A"
+      },
+      {
+       value: "item2",
+       text: "Section B"
+      },
+      {
+       value: "item3",
+       text: "Section C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question19",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t5/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p3_sort",
    elements: [
     {
      type: "matrix",
      name: "gradient_q2_sort",
      title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
      correctAnswer: {
-      S1: "1",
-      S2: "3",
-      S3: "2",
+      S1: "3",
+      S2: "2",
+      S3: "1",
       S4: "2"
      },
      columns: [
@@ -477,41 +423,8 @@ var surveyJSON = {
     },
     {
      type: "html",
-     name: "gradient_q2_html",
-     html: "<img width='100%' src='https://christianbors.github.io/images/list_slider/ul_gradient.png' />"
-    }
-   ]
-  },
-  {
-   name: "B_p3",
-   elements: [
-    {
-     type: "radiogroup",
-     name: "gradient_q3",
-     visible: false,
-     title: "Out of the highlighted results, which one shows the least uncertainty?",
-     correctAnswer: [
-      "item1"
-     ],
-     choices: [
-      {
-       value: "item1",
-       text: "Frame A"
-      },
-      {
-       value: "item2",
-       text: "Frame B"
-      },
-      {
-       value: "item3",
-       text: "Frame C"
-      }
-     ]
-    },
-    {
-     type: "html",
-     name: "question11",
-     html: "<img width='100%' src='https://christianbors.github.io/images/list_slider_result/uls_gradient.png' />"
+     name: "question24",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
@@ -522,40 +435,42 @@ var surveyJSON = {
      type: "html",
      name: "question16",
      html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segmentation.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
+    },
+    {
+     type: "html",
+     name: "question6",
+     html: "<h4>Visualizing Uncertainty with a Threshold</h4>\n<p>\nThis visualization shows all uncertain segments which cannot be associated with a label with a probability above a certain threshold as grey values:\n<ul>\n<li>If the certainty of a segment is above the selected threshold, the corresponding color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example of visualizing uncertainty shown as grey segments if their label probability is below a certain threshold. \n</p>\n<h4>Interaction</h4>\n<p>Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.</p>"
     }
    ],
    visible: false,
-   title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
+   title: "Introduction - Visualizing Uncertainty with Thresholds"
   },
   {
    name: "C_p1",
    elements: [
     {
      type: "radiogroup",
-     name: "threshold_q1",
-     title: "Out of the highlighted (red frame) segments, which is the most certain?",
+     name: "question31",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
-      "item1"
+      "2"
      ],
      choices: [
       {
-       value: "item1",
+       value: "1",
        text: "Frame A"
       },
       {
-       value: "item2",
+       value: "2",
        text: "Frame B"
-      },
-      {
-       value: "item3",
-       text: "Frame C"
       }
-     ]
+     ],
+     otherText: "Frame D"
     },
     {
      type: "html",
      name: "question1",
-     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/slider_segment_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t1/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
@@ -564,30 +479,27 @@ var surveyJSON = {
    elements: [
     {
      type: "radiogroup",
-     name: "question5",
-     title: "Out of the highlighted (red frame) segments, which is the most certain?",
+     name: "question25",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
-      "item1"
+      "2"
      ],
      choices: [
       {
-       value: "item1",
+       value: "1",
        text: "Frame A"
       },
       {
-       value: "item2",
+       value: "2",
        text: "Frame B"
-      },
-      {
-       value: "item3",
-       text: "Frame C"
       }
-     ]
+     ],
+     otherText: "Frame D"
     },
     {
      type: "html",
-     name: "question6",
-     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/toggle_segment_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+     name: "question26",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t2/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
@@ -596,30 +508,31 @@ var surveyJSON = {
    elements: [
     {
      type: "radiogroup",
-     name: "threshold_q3",
-     title: "Out of the highlighted (red frame) segments, which is the most certain?",
+     name: "question27",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
      correctAnswer: [
-      "item2"
+      "3"
      ],
      choices: [
       {
-       value: "item1",
+       value: "1",
        text: "Frame A"
       },
       {
-       value: "item2",
+       value: "2",
        text: "Frame B"
       },
       {
-       value: "item3",
+       value: "3",
        text: "Frame C"
       }
-     ]
+     ],
+     otherText: "Frame D"
     },
     {
      type: "html",
-     name: "question8",
-     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/slider_list_section_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"
+     name: "question28",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
    ]
   },
@@ -628,45 +541,130 @@ var surveyJSON = {
    elements: [
     {
      type: "radiogroup",
-     name: "question12",
-     title: "Out of the highlighted results, which one shows the least uncertainty?",
+     name: "question34",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
      correctAnswer: [
-      "item2"
+      "item1"
      ],
      choices: [
       {
        value: "item1",
-       text: "Frame A"
+       text: "Section A"
       },
       {
        value: "item2",
-       text: "Frame B"
+       text: "Section B"
       },
       {
        value: "item3",
-       text: "Frame C"
+       text: "Section C"
       }
      ]
     },
     {
      type: "html",
-     name: "question13",
-     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/slider_list_result_selection.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>\n<!-- <iframe width=\"100%\" height=\"600\" src=\"//jsfiddle.net/qxnku937/1/show\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe> -->"
+     name: "question35",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t4/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
     }
-   ],
-   visible: false
+   ]
   },
   {
-   name: "D_intro_correlation",
+   name: "C_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question36",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "item1",
+       text: "Section A"
+      },
+      {
+       value: "item2",
+       text: "Section B"
+      },
+      {
+       value: "item3",
+       text: "Section C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question37",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t5/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p3_sort",
+   elements: [
+    {
+     type: "matrix",
+     name: "question40",
+     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "3",
+      S2: "2",
+      S3: "1",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "S1",
+       text: "Segment A"
+      },
+      {
+       value: "S2",
+       text: "Segment B"
+      },
+      {
+       value: "S3",
+       text: "Segment C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question41",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"600\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "D_intro_heatmap",
    elements: [
     {
      type: "html",
-     name: "intro_corr",
-     html: "<h4>Correlations of Uncertainties</h4>\n<p>\nThe following visualization shows different uncertainties.\nIt is possible that these uncertainties correlate.\nBut what exactly does this mean?\n</p>\n<p>\nCorrelation is a measure of statistical relation between variables, in our case different uncertainty dimensions.\nIt can be used to describe how strong a relation between variables is, and if there is a positive or negative relation.\nIt is possible visually inspect a dataset for correlation.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_1.png' />\n<p>\nThis example shows a positive correlation: In the orange boxes you can see an increase of uncertainty and at the same time the uncertainty increases in the blue box.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/value_uncertainty/value_uncertainty_example_2.png' />\n<p>\nThis example shows no correlation between uncertainties: While there is no change in uncertainty in the orange boxes, uncertainties change in the blue boxes.\n</p>\n<p>\nIn the following examples your task is to judge if there is a correlation between the different uncertainties.\n</p>"
+     name: "question5",
+     html: "<h4>Recap - Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segmentation.\nThe most certain segments are the ones that have high probability over the whole segment (see blue rectangle in Result A above), and not have intermittent changes in segment probabilities (see orange rectangle).\n</p>\n<p>In the following we will show you different visualizations, there will be a short introduction into how these visualizations convey uncertainty, including an example that shows how you should interpret it.</p>"
+    },
+    {
+     type: "html",
+     name: "question14",
+     html: "<h4>Visualizing Uncertainty as a Heatmap</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes darker. </li>\n<li>If there is high uncertainty in the data, the segment becomes lighter. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/t1/t1_heatmap.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient at the beginning and end of labels indicates that it is uncertain where the label actually starts.</p>\n<h4>Interaction</h4>\n<p>Later you can toggle between the uncertainty transparency view and the regular result view, to see the original color of the segments. This is important to properly judge the color saturation.</p>"
     }
    ],
    visible: false,
-   title: "Visualization Introduction - Uncertainty Gradient and Disambiguation"
+   title: "Introduction - Visualizing Uncertainty with Heatmaps"
   },
   {
    name: "D_p1",
