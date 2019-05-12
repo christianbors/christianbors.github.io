@@ -30,8 +30,8 @@ However, the segments are assigned labels only with a certain probability, so th
 </p>
 <img width='800px' src='https://christianbors.github.io/images/probabilities.png' />
 <p>
-We can visualize these probabilities, as shown in this view showing probabilities of different segment labels over time.
-The two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different likelihood.
+We can visualize these uncertainties, as shown in this view showing certainties of different segment labels over time.
+The two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different certainty.
 The blue frame shows a less significant result, implying that this segment is less certain.
 </p>
 
@@ -39,3 +39,15 @@ The blue frame shows a less significant result, implying that this segment is le
 <p>Finding an optimal result depends on your analysis task. If you want the segmentation algorithm to detect a certain segment more accurately, high uncertainty in other parts of the data might not be interesting to you. So always consider what the goal of your analysis is!</p> -->
 <img width='800px' src='https://christianbors.github.io/images/probabilities_comparison.png' />
 <p>E.g., if you want to choose an segmentation result with a high probability (and low uncertainty), Result A is preferred over Result B, because there is a clear winner of labels with high probability.</p>
+
+<h4>Answering the Upcoming Questions</h4>
+<p>
+The following visualizations are based on the same data. Please be aware of the introduction when answering the questions.
+Answer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.
+</p>
+<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />
+<p>
+It is not easy to decide between two results. Long segments do not always result in a very accurate segmentation.
+The highlighted area (orange frame) shows that the certainty fluctuates periodically, which could indicate that the algorithm did not detect an activity accurately.
+The most certain segments are the ones that have high probability across the whole segment.
+</p>
