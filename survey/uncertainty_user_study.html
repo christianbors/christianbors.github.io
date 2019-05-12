@@ -1,0 +1,1311 @@
+<!-- Your platform (jquery) scripts. -->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script src="https://surveyjs.azureedge.net/1.0.82/survey.jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<div id="surveyContainer"></div>
+
+<script type="text/javascript">
+Survey.Survey.cssType = "bootstrap";
+
+var surveyJSON = {
+ pages: [
+  {
+   name: "group_selection",
+   elements: [
+    {
+     type: "dropdown",
+     name: "user_study_group",
+     title: "Please enter your group number here",
+     isRequired: true,
+     choices: [
+      {
+       value: "g1",
+       text: "Group 1"
+      },
+      {
+       value: "g2",
+       text: "Group 2"
+      },
+      {
+       value: "g3",
+       text: "Group 3"
+      },
+      {
+       value: "g4",
+       text: "Group 4"
+      },
+      {
+       value: "g5",
+       text: "Group 5"
+      },
+      {
+       value: "g6",
+       text: "Group 6"
+      },
+      {
+       value: "g7",
+       text: "Group 7"
+      },
+      {
+       value: "g8",
+       text: "Group 8"
+      },
+      {
+       value: "g9",
+       text: "Group 9"
+      },
+      {
+       value: "g10",
+       text: "Group 10"
+      },
+      {
+       value: "g11",
+       text: "Group 11"
+      },
+      {
+       value: "g12",
+       text: "Group 12"
+      },
+      {
+       value: "g13",
+       text: "Group 13"
+      },
+      {
+       value: "g14",
+       text: "Group 14"
+      },
+      {
+       value: "g15",
+       text: "Group 15"
+      },
+      {
+       value: "g16",
+       text: "Group 16"
+      },
+      {
+       value: "g17",
+       text: "Group 17"
+      },
+      {
+       value: "g18",
+       text: "Group 18"
+      },
+      {
+       value: "g19",
+       text: "Group 19"
+      },
+      {
+       value: "g20",
+       text: "Group 20"
+      },
+      {
+       value: "g21",
+       text: "Group 21"
+      },
+      {
+       value: "g22",
+       text: "Group 22"
+      },
+      {
+       value: "g23",
+       text: "Group 23"
+      },
+      {
+       value: "g24",
+       text: "Group 24"
+      }
+     ]
+    }
+   ],
+   title: "Group Selection"
+  },
+  {
+   name: "intro",
+   elements: [
+    {
+     type: "html",
+     name: "question4",
+     html: "<h4>Welcome to the Survey of Visualizing Uncertainty</h4>\n\n<p>\nThe evaluation is split up into three chapters, with two sessions measuring your performance, and ending with a questionnaire to tell us your preferences on specific visualization designs.\n</p>\n<p>\nThe two performance evaluations will test different visualizations to support you with:\n<ul>\n  <li>Finding sources of uncertainty.</li>\n  <li>Selecting the best result when uncertainty is present in the data.</li>\n</ul>\n</p>\n\n<h4>What does this mean?</h4>\n<p>Sometimes, data is affected by uncertainty. Showing this uncertainty to the end user (you!) allows them to assess if the results can be trusted.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/one_result.png' />\n<p>This yields a one-dimensional time series of segments.\nThe time series is broken down into logical segments by the algorithms, which can be analyzed by the user more easily.</p>\n<img width='300px' src='https://christianbors.github.io/images/ts_seg_movements.png' />\n<p>\nMovement data can be recorded as a time series, with motion detection sensors logging motions in different directions. These can be processed into different segments (e.g., cook, eat, wash).\nHowever, the segments are assigned labels only with a certain probability, so there is uncertainty in the processing.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/ts_segmentations.png' />\n<!-- <img width='200px' src='https://christianbors.github.io/images/labels.png' /> -->\n<p>Usually multiple alternative segmentation results are computed which contain different degrees of uncertainty.\n</p>\n<h4>Finding sources of uncertainty</h4>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities.png' />\n<p>\nWe can visualize these uncertainties, as shown in this view showing certainties of different segment labels over time.\nThe two frames (red and blue) show the purple label as the most likely label at these two points in time, but with different certainty.\nThe blue frame shows a less significant result, implying that this segment is less certain.\n</p>\n\n<!-- <h4>Selecting the best result when uncertainty is present in the data</h4>\n<p>Finding an optimal result depends on your analysis task. If you want the segmentation algorithm to detect a certain segment more accurately, high uncertainty in other parts of the data might not be interesting to you. So always consider what the goal of your analysis is!</p> -->\n<img width='800px' src='https://christianbors.github.io/images/probabilities_comparison.png' />\n<p>E.g., if you want to choose an segmentation result with a high probability (and low uncertainty), Result A is preferred over Result B, because there is a clear winner of labels with high probability.</p>\n\n<h4>Answering the Upcoming Questions</h4>\n<p>\nThe following visualizations are based on the same data. Please be aware of the introduction when answering the questions.\nAnswer the questions as accurately as possible, there is no time limit. So it is not necessary to rush.\n</p>\n<img width='800px' src='https://christianbors.github.io/images/probabilities-certainty.png' />\n<p>\nIt is not easy to decide between two results. Long segments do not always result in a very accurate segmentation.\nThe highlighted area (orange frame) shows that the certainty fluctuates periodically, which could indicate that the algorithm did not detect an activity accurately.\nThe most certain segments are the ones that have high probability across the whole segment.\n</p>"
+    },
+    {
+     type: "text",
+     name: "user_hash",
+     visible: false
+    }
+   ],
+   title: "Introduction"
+  },
+  {
+   name: "A_intro_lineplot",
+   elements: [
+    {
+     type: "html",
+     name: "question21",
+     html: "\n<p>\nThis visualization shows result certainty in the separate line chart view:\n<ul>\n<li>A high value in the line chart corresponds to high certainty of the segment</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/linechart/linechart_view_raw.png' />\n<p>The figure shows an example result visualized with uncertainty represented in the line chart. The result uncertainties indicate the confidence in the segment. You can inspect segments closely and find out how certain the result is matched.</p>\n<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://christianbors.github.io/intro.html\">Introduction for reference</a></p>"
+    }
+   ],
+   title: "Chapter Introduction - Visualizing Uncertainty with Line Charts"
+  },
+  {
+   name: "A_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question22",
+     title: "Out of the highlighted (red frame) segments, which represents the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Segment A"
+      },
+      {
+       value: "2",
+       text: "Segment B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question23",
+     html: "\n<img width='100%' src='https://christianbors.github.io/t1/t1_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "A_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question29",
+     title: "Out of the highlighted (red frame) segments, which represents the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question30",
+     html: "\n<img width='100%' src='https://christianbors.github.io/t2/t2_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "A_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question59",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "3"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question44",
+     html: "<img width='100%' src='https://christianbors.github.io/t3/t3_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "A_p4",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question60",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question62",
+     html: "<img width='100%' src='https://christianbors.github.io/t4/t4_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "A_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question43",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question64",
+     html: "<img width='100%' src='https://christianbors.github.io/t5/t5_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "A_p3_sort",
+   elements: [
+    {
+     type: "matrix",
+     name: "question38",
+     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "3",
+      S2: "2",
+      S3: "1",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "A1",
+       text: "Area A"
+      },
+      {
+       value: "A2",
+       text: "Area B"
+      },
+      {
+       value: "A3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question63",
+     html: "<img width='800px' src='https://christianbors.github.io/t3/t3_linechart.png' />"
+    }
+   ]
+  },
+  {
+   name: "B_intro_uvis",
+   elements: [
+    {
+     type: "html",
+     name: "question8",
+     html: "<h4>Visualizing Uncertainty with Transparency</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes more saturated. </li>\n<li>If there is high uncertainty in the data, the segment becomes more transparent. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/gradient_raw.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. What can be seen here is that transitions between the labels are very uncertain. The gradient at the beginning and end of labels indicates that it is uncertain where the label actually starts.</p>\n<h4>Interaction</h4>\n<p>Later you can toggle between the uncertainty transparency view and the regular result view, to see the original color of the segments. This is important to properly judge the color saturation.</p>\n<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://christianbors.github.io/intro.html\">Introduction for reference</a></p>"
+    }
+   ],
+   title: "Introduction - Visualizing Uncertainty with Transparency"
+  },
+  {
+   name: "B_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "gradient_q1",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Segment A"
+      },
+      {
+       value: "2",
+       text: "Segment B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "gradient_q1_html",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t1/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "gradient_q4",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question7",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t2/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question9",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "3"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question10",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p4",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "gradient_q2",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Segment A"
+      },
+      {
+       value: "2",
+       text: "Segment B"
+      },
+      {
+       value: "3",
+       text: "Segment C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question11",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t4/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question18",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question19",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t5/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "B_p3_sort",
+   elements: [
+    {
+     type: "matrix",
+     name: "gradient_q2_sort",
+     title: "Please sort the following highlighted Areas (red frame) from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "3",
+      S2: "2",
+      S3: "1",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "A1",
+       text: "Area A"
+      },
+      {
+       value: "A2",
+       text: "Area B"
+      },
+      {
+       value: "A3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question24",
+     html: "<p>You can toggle between the regular result view and the uncertainty transparency view.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/toggle.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_intro_threshold",
+   elements: [
+    {
+     type: "html",
+     name: "question6",
+     html: "<h4>Visualizing Uncertainty with a Threshold</h4>\n<p>\nThis visualization shows all uncertain segments which cannot be associated with a label with a probability above a certain threshold as grey values:\n<ul>\n<li>If the certainty of a segment is above the selected threshold, the corresponding color is shown.</li>\n<li>If the certainty of a time stamp is below the selected threshold, the segment is colored grey.</li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/disambiguation_raw.png' />\n<p>\nThe figure shows an example of visualizing uncertainty shown as grey segments if their label probability is below a certain threshold. \n</p>\n<h4>Interaction</h4>\n<p>Later you can interactively change the threshold (adjusting a slider from 0 to 100 percent certainty) to see the thresholds of certainties for the different segments.\nThis allows you to see only segments that have been labeled with sufficient certainty.</p>\n<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://christianbors.github.io/intro.html\">Introduction for reference</a></p>"
+    }
+   ],
+   visible: false,
+   title: "Introduction - Visualizing Uncertainty with Thresholds"
+  },
+  {
+   name: "C_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question31",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Segment A"
+      },
+      {
+       value: "2",
+       text: "Segment B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question1",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t1/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question25",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question26",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t2/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question27",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "3"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question28",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p4",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question34",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Segment A"
+      },
+      {
+       value: "2",
+       text: "Segment B"
+      },
+      {
+       value: "3",
+       text: "Segment C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question35",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t4/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question36",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question37",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t5/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "C_p3_sort",
+   elements: [
+    {
+     type: "matrix",
+     name: "question40",
+     title: "Please sort the following highlighted Segments (red frames) from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "3",
+      S2: "2",
+      S3: "1",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "A1",
+       text: "Area A"
+      },
+      {
+       value: "A2",
+       text: "Area B"
+      },
+      {
+       value: "A3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question41",
+     html: "<p>You can adjust the uncertainty threshold level with the slider from 0.0 to 1.0.</p>\n<iframe width=\"100%\" height=\"100%\" id=\"block__iframe\" scrolling=\"no\" data-reactid=\".0.0.1.0.0.1\" sandbox=\"allow-scripts allow-top-navigation allow-popups allow-same-origin\" src=\"https://christianbors.github.io/t3/slider.html\" allowfullscreen=\"allowfullscreen\" allowpaymentrequest frameborder=\"0\"></iframe>"
+    }
+   ]
+  },
+  {
+   name: "D_intro_heatmap",
+   elements: [
+    {
+     type: "html",
+     name: "question14",
+     html: "<h4>Visualizing Uncertainty as a Heatmap</h4>\n<p>\nThis visualization encodes the uncertainty as transparency:\n<ul>\n<li>If there is less uncertainty, the color of the segments becomes darker. </li>\n<li>If there is high uncertainty in the data, the segment becomes lighter. </li>\n</ul>\n</p>\n<img width='800px' src='https://christianbors.github.io/images/heatmap_example.png' />\n<p>The figure shows an example of encoding uncertainty as transparency. You can only see the uncertainty of a result, however you have no information the segments.</p>\n<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://christianbors.github.io/intro.html\">Introduction for reference</a></p>"
+    }
+   ],
+   visible: false,
+   title: "Introduction - Visualizing Uncertainty with Heatmaps"
+  },
+  {
+   name: "D_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question2",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question39",
+     html: "<img width='100%' src='https://christianbors.github.io/t1/t1_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "D_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question12",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question13",
+     html: "<img width='100%' src='https://christianbors.github.io/t2/t2_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "D_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question17",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "3"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ],
+     otherText: "Frame D"
+    },
+    {
+     type: "html",
+     name: "question61",
+     html: "<img width='100%' src='https://christianbors.github.io/t3/t3_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "D_p4",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question33",
+     title: "Out of the highlighted segments (red frames), which is the most certain?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question45",
+     html: "<img width='100%' src='https://christianbors.github.io/t4/t4_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "D_p5",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question43",
+     title: "Out of the highlighted areas (red frames), which is the most certain?",
+     correctAnswer: [
+      "item1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      },
+      {
+       value: "3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question3",
+     html: "<img width='100%' src='https://christianbors.github.io/t5/t5_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "D_p3_sort",
+   elements: [
+    {
+     type: "matrix",
+     name: "question38",
+     title: "Please sort the following highlighted Segments from Most Certain to Least Certain",
+     correctAnswer: {
+      S1: "3",
+      S2: "2",
+      S3: "1",
+      S4: "2"
+     },
+     columns: [
+      {
+       value: "1",
+       text: "1. (Most Certain)"
+      },
+      {
+       value: "2",
+       text: "2."
+      },
+      {
+       value: "3",
+       text: "3. (Least Certain)"
+      }
+     ],
+     rows: [
+      {
+       value: "A1",
+       text: "Area A"
+      },
+      {
+       value: "A2",
+       text: "Area B"
+      },
+      {
+       value: "A3",
+       text: "Area C"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question32",
+     html: "<img width='800px' src='https://christianbors.github.io/t3/t3_heatmap.png' />"
+    }
+   ]
+  },
+  {
+   name: "E_intro",
+   elements: [
+    {
+     type: "html",
+     name: "question46",
+     html: "<h4>Visualizing Uncertainty with Area Charts</h4>\n<p>\nThe following visualizations will show you a different visualization than before. It shows different dimensions of uncertainty on the same dataset.\nThis means that multiple lines of uncertainty are shown. It can be used to inspect uncertainties introduced by multiple processing algorithms.\n<ul>\n<li>A high value in the area chart corresponds to high uncertainty in the dataset.</li>\n</ul>\n</p>\n<img width='100%' src='https://christianbors.github.io/images/area_chart_example.png' />\n<p>The figure shows an example dataset visualizing two dimensions of uncertainty. In the example you can see that there are two areas at the start that have periodic uncertainties.</p>"
+    }
+   ],
+   title: "Introduction - Visualizing Uncertainty with Area Charts"
+  },
+  {
+   name: "E_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question42",
+     title: "Out of the highlighted areas (red frames), which has less uncertainty?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question47",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_area_chart_a.png' />"
+    }
+   ]
+  },
+  {
+   name: "E_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question49",
+     title: "Out of the highlighted areas (red frames), which has less uncertainty?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question50",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_area_chart_b.png' />"
+    }
+   ]
+  },
+  {
+   name: "E_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question51",
+     title: "Out of the highlighted areas (red frames), which area has the least overall uncertainty?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question52",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_area_chart_c.png' />"
+    }
+   ]
+  },
+  {
+   name: "F_intro",
+   elements: [
+    {
+     type: "html",
+     name: "question48",
+     html: "<h4>Visualizing Uncertainty with Heatbands</h4>\n<p>\nThe following visualizations will show you a different visualization than before. It shows different dimensions of uncertainty on the same dataset.\nThis means that multiple lines of uncertainty are shown. It can be used to inspect uncertainties introduced by multiple processing algorithms.\n<ul>\n<li>A darker area corresponds to high uncertainty in the dataset.</li>\n<li>A brighter area corresponds to low uncertainty in the dataset.</li>\n</ul>\n</p>\n<img width='100%' src='https://christianbors.github.io/images/heatmap_vu_example.png' />\n<p>The figure shows an example dataset visualizing two dimensions of uncertainty. In the example you can see that there are two areas at the start that have periodic uncertainties.</p>"
+    }
+   ],
+   title: "Introduction - Visualizing Uncertainty with Heatbands"
+  },
+  {
+   name: "F_p1",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question53",
+     title: "Out of the highlighted areas (red frames), which has less uncertainty?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question54",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_heatmap_a.png' />"
+    }
+   ]
+  },
+  {
+   name: "F_p2",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question55",
+     title: "Out of the highlighted areas (red frames), which has less uncertainty?",
+     correctAnswer: [
+      "2"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question56",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_heatmap_b.png' />"
+    }
+   ]
+  },
+  {
+   name: "F_p3",
+   elements: [
+    {
+     type: "radiogroup",
+     name: "question57",
+     title: "Out of the highlighted areas (red frames), which area has the least overall uncertainty?",
+     correctAnswer: [
+      "1"
+     ],
+     choices: [
+      {
+       value: "1",
+       text: "Area A"
+      },
+      {
+       value: "2",
+       text: "Area B"
+      }
+     ]
+    },
+    {
+     type: "html",
+     name: "question58",
+     html: "<img width='100%' src='https://christianbors.github.io/t6/vu_heatmap_c.png' />"
+    }
+   ]
+  }
+ ],
+ sendResultOnPageNext: true,
+ showPrevButton: false,
+ showProgressBar: "top",
+ firstPageIsStarted: true,
+ showTimerPanel: "bottom",
+ showTimerPanelMode: "survey"
+};
+
+var permutations = {
+g1: ["A","B","C","D","E","F"],
+g2: ["B","A","C","D","F","E"],
+g3: ["C","A","B","D","E","F"],
+g4: ["A","C","B","D","F","E"],
+g5: ["B","C","A","D","E","F"],
+g6: ["C","B","A","D","F","E"],
+g7: ["C","B","D","A","E","F"],
+g8: ["B","C","D","A","F","E"],
+g9: ["D","C","B","A","E","F"],
+g10: ["C","D","B","A","F","E"],
+g11: ["B","D","C","A","E","F"],
+g12: ["D","B","C","A","F","E"],
+g13: ["D","A","C","B","E","F"],
+g14: ["A","D","C","B","F","E"],
+g15: ["C","D","A","B","E","F"],
+g16: ["D","C","A","B","F","E"],
+g17: ["A","C","D","B","E","F"],
+g18: ["C","A","D","B","F","E"],
+g19: ["B","A","D","C","E","F"],
+g20: ["A","B","D","C","F","E"],
+g21: ["D","B","A","C","E","F"],
+g22: ["B","D","A","C","F","E"],
+g23: ["A","D","B","C","E","F"],
+g24: ["D","A","B","C","F","E"]
+}
+
+  var survey = new Survey.Survey(surveyJSON);
+  //set the place holder for "email" question
+
+  // var emailQuestion = survey.getQuestionByName("question18");
+  // var dt = new Date();
+  // if (emailQuestion) emailQuestion.value = dt.toLocaleTimeString();
+  
+  //Add a new question into existing page
+  // var contactPage = survey.getPageByName("customerContact");
+  // if (contactPage) {
+  // var fbPageQuestion = contactPage.addNewQuestion("text", "fbPage");
+  // fbPageQuestion.title = "Please enter your facebook page:"
+  // }
+
+function sendDataToServer(survey) {
+	for (var i = 0; i < survey.pages.length; i++) {
+		if (survey.pages[i].questions[0] != null)
+			//TODO: make correct validation
+			// var answer = survey.pages[i].questions[0].value;
+			// if (jQuery.isPlainObject(answer)) {
+			// 	$.each(answer, )
+			// }
+
+			// $.each(survey.pages[i].questions[0].correctAnswer) {
+
+			// }
+			// var isCorrect = survey.pages[i].questions[0].correctAnswer == survey.pages[i].questions[0].value;
+			survey.pages[i].questions[0].value = {
+				result: survey.pages[i].questions[0].value, 
+				time: survey.pages[i].timeSpent
+				// isCorrect: isCorrect
+			};
+		console.log(survey.pages[i].timeSpent);
+	}
+  survey.sendResult('990cf88d-bbd8-4f64-87a5-c5faff5eaeee');
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer,
+    onStarted: onStartSortQuestionsByPermutation
+});
+
+var grp;
+
+function onStartSortQuestionsByPermutation(survey) {
+	grp = survey.getQuestionByName("user_study_group").value;
+
+	let pages = [];
+	pages.push(surveyJSON.pages[1]);
+	// pages.push(survey.pages[0]);
+	// TODO: Sort by permutation
+	for (var i = 0; i < permutations[grp].length; ++i) {
+		var chapterQuestions = surveyJSON.pages.filter(q => q.name.includes(permutations[grp][i] + "_"));
+		pages = pages.concat(chapterQuestions);
+	}
+	surveyJSON.pages = pages;
+	survey = new Survey.Model(surveyJSON);
+	$("#surveyContainer").Survey({
+	    model: survey,
+	    onComplete: sendDataToServer,
+	    onStarted: onStartCreateHash
+	});
+}
+
+function onStartCreateHash(survey) {
+	var hash = hashCode(permutations[grp] + "" + Date.now());
+  	survey.completedHtml = survey.completedHtml + "<h3>Thank you for participating in the user study</h3><h4>Your ID: " + hash + "</h4>";
+	console.log(survey.completedHtml);
+	survey.getQuestionByName("user_hash").value = hash;
+}
+
+function hashCode (str){
+    var hash = 0;
+    if (str.length == 0) return hash;
+    for (i = 0; i < str.length; i++) {
+        char = str.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
+}
+</script>
