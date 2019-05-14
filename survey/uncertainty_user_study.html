@@ -133,6 +133,11 @@ var surveyJSON = {
      type: "text",
      name: "user_hash",
      visible: false
+    },
+    {
+     type: "text",
+     name: "group",
+     visible: false
     }
    ],
    title: "Introduction"
@@ -1296,6 +1301,7 @@ function onStartCreateHash(survey) {
   	survey.completedHtml = survey.completedHtml + "<h3>Thank you for participating in the user study</h3><h4>Your ID: " + hash + "</h4>";
 	console.log(survey.completedHtml);
 	survey.getQuestionByName("user_hash").value = hash;
+  survey.getQuestionByName("group").value = grp;
 }
 
 function hashCode (str){
